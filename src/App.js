@@ -4,9 +4,11 @@ import Home from './components/Home';
 import Header from './components/Header';
 import ProductsList from './components/ProductsList';
 
+import Container from 'react-bootstrap/Container';
+
 const App = () => {
   return (
-    <div>
+    <Container>
       
       <BrowserRouter>
       <Header />
@@ -16,7 +18,8 @@ const App = () => {
           <Route path='/cart' element={<Cart/>}/>
         </Routes>
       </BrowserRouter>
-    </div>
+      
+    </Container>
   )
 }
 
