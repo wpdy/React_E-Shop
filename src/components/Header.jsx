@@ -6,7 +6,7 @@ import Navbar from 'react-bootstrap/Navbar';
 
 const Header = () => {
     return (
-        <Navbar bg="light" variant="light">
+        <Navbar bg="light" variant="light" className="header">
             <Container>
                 <Nav className="me-auto">
                     <Link to="/" className='nav-link'>Home</Link>

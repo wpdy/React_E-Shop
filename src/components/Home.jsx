@@ -1,10 +1,23 @@
-import React from 'react'
+import Carousel from 'react-bootstrap/Carousel';
+import products from '../data/data';
 
 const Home = () => {
   return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
+    <Carousel>
+      {products.map(product => (
+        <Carousel.Item key={product.id}>
+          <img
+            className="d-block w-100 carousel_img"
+            src={product.imageUrl}
+            alt="First slide"
+          />
+          <Carousel.Caption>
+            <h3>{product.name}</h3>
+            <p>{product.description}</p>
+          </Carousel.Caption>
+        </Carousel.Item>
+      ))}
+    </Carousel>
   )
 }
 
