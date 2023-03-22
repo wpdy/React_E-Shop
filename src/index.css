@@ -2,16 +2,118 @@
  box-sizing: border-box;
   margin: 0;
 }
+
 body {
+
  height: 100vh;
 }
+
+.lol {
+ background-color: #fbe3e8;
+
+}
+
+.header {
+  
+  margin-bottom: 10px;
+}
+
+.me-auto {
+  
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.eshop {
+  font-family: Rockwell;
+  font-weight: bolder;
+  font-size: 50px;
+  margin-right: 60px;
+}
+
+.productslist {
+  font-weight: bold;
+  font-family: Comic Sans MS;
+}
+
+.nav-link {
+  margin-left: 15px;
+  font-family: Comic Sans MS;
+
+}
+
+.nav-link:hover {
+  transition: 0.6s;
+  font-size: 33px;
+  text-decoration: underline;
+  text-shadow: 5px -3px 3px rgb(194, 54, 159);
+
+}
+
 .carousel_img{
   height: 90vh;
   overflow: hidden;
   object-fit: cover;
 }
-h3, p{
+
+h3{
   color:#ecede6;
   text-shadow: 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black, 0 0 4px black;
 
+}
+
+p {
+  font-family: MV Boli;
+  font-size: 15px;
+  font-weight: bold;
+  color: #000;
+}
+
+.productname {
+  font-size: 32px;
+  font-family: Consolas;
+}
+
+.productprice {
+  margin-right: 15px;
+  font-size: 20px;
+  color: red;
+}
+
+
+.movies_list {
+  margin-top: 2em; 
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2em;
+}
+
+.one_movie {
+  background-color: #fceed1;
+  font-family: "Comic Sans MS";
+  text-align: center;
+  margin: 10px;
+  width: 390px;
+  color: #fff;
+  padding: 5px;
+  border-radius: 15px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  border: 2px solid black;
+  overflow: hidden;
+}
+
+img {
+  height: 320px;
+  width: 380px;
+  padding: 10px;
+  border-radius: 25px;
+}
+
+button {
+  height: 30px;
+  width: 100px;
 }
