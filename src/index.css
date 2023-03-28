@@ -44,6 +44,7 @@ body {
 }
 
 .nav-link:hover {
+  transform: skew(15deg, 7deg);
   transition: 0.6s;
   font-size: 33px;
   text-decoration: underline;
@@ -113,7 +114,8 @@ img {
   border-radius: 25px;
 }
 
-button {
+.itemButton {
   height: 30px;
   width: 100px;
 }
+

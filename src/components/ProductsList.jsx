@@ -1,11 +1,13 @@
-//komponentai
 import Item from './Item';
 
-const ProductsList = () => {
+
+const ProductsList = ({buyProduct}) => {
+
+   
   return (
     <div>
-      <h1 className="text-center my-2 productslist">Products List</h1>
-      <Item />
+      {/* <h1 className="text-center my-2 productslist">Products List</h1> */}
+      <Item buyProduct={buyProduct}/>
     </div>
   )
 }
