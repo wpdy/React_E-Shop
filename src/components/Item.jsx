@@ -13,8 +13,9 @@ const Item = ({buyProduct}) => {
           <div key={product.id} className='one_movie'>
             <img src={product.imageUrl} alt="" />
             <p className='productname'>{product.name}</p>
-            
             <p>{product.description}</p>
+            <h1 className='lolas'>Stock: {product.countInStock}</h1>
+
             <p className='productprice'>{product.price}$</p>
             <button className='itemButton' onClick={() => handleClick(product)} >Buy</button>
           </div>

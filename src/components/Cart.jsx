@@ -2,14 +2,14 @@
 import Table from 'react-bootstrap/Table';
 
 
-const Cart = ({addToCart, removeProduct}) => {
+const Cart = ({addToCart, removeProduct, increaseQuantity, decreaseQuantity, clearCart}) => {
 
-  // console.log(addToCart.name)
+  // console.log(addToCart)
 
-  const handleRemove = (id) => {
-    removeProduct(id)
+  const TotalPrice = () => {
+    return addToCart.reduce((sum, {price, quantinty}) => 
+    sum + price*quantinty, 0).toFixed(2)
   }
-  
 
   return (
     <Table striped bordered hover>
@@ -21,19 +21,33 @@ const Cart = ({addToCart, removeProduct}) => {
           <th>Price</th>
           <th>Remove</th>
         </tr>
+        
       </thead>
       <tbody>
         {
           addToCart?.map((product, index)=>(
-              <tr key={index} className='test'>
+              <tr key={index}>
                   <td>{index + 1}</td>
                   <td>{product.name}</td>
-                  <td className='cartButton'><button>-</button><h1>Empty</h1><button>+</button></td>
+                  <td>
+                    <button onClick={() => decreaseQuantity(product)}>-</button>
+                    {product.quantinty}
+                    <button onClick={() => increaseQuantity(product)}>+</button>
+                  </td>
                   <td>{product.price}</td>
-                  <td><button onClick={() => handleRemove(product.id)}>Remove</button></td>
+                  <td><button onClick={() => removeProduct(product.id)}>Remove</button></td>
               </tr>
           ))
         }
+        
+        {
+          <tr>
+            <td colSpan={3}>Bendra suma: { TotalPrice() }</td>
+            <td><button onClick={() => clearCart()}>Pay</button></td>
+            <td><button>Reset</button></td>
+          </tr>
+        }
+        
       </tbody>
     </Table>
   )
