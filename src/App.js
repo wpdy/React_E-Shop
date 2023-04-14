@@ -20,8 +20,6 @@ const App = () => {
       (localVar) => product.id === localVar.id
     )
 
-    console.log(newCart)
-
     if(productInCart === undefined) {
       productInCart = {
         ...product,
@@ -29,29 +27,29 @@ const App = () => {
       }
       newCart.push(productInCart)
     }
-
+    console.log(newCart)
     setAddToCart(newCart)
 
-
+    // newCart.push(productInCart)
     // product.quantinty = 1
     // setAddToCart([...addToCart, product])
 
   }
 
   const removeProduct = (productID) => {
-    const newList = addToCart.filter(product => product.id !== productID);
-    setAddToCart(newList);
+    const newCart = addToCart.filter(product => product.id !== productID);
+    setAddToCart(newCart);
   }
 
-  const increaseQuantity = (item) => {
+  const increaseQuantity = (product) => {
     console.log('increaseQuantity')
     const newCart = [...addToCart]
 
     let productInCart = newCart.find(
-      (localVar) => item.id === localVar.id
+      (localVar) => product.id === localVar.id
     )
 
-    if (productInCart && productInCart.quantinty < item.countInStock) {
+    if (productInCart && productInCart.quantinty < product.countInStock) {
       productInCart.quantinty++
     }
     else {
@@ -62,20 +60,21 @@ const App = () => {
   }
 
 
-  const decreaseQuantity = (item) => {
+  const decreaseQuantity = (product) => {
     console.log('decreaseQuantity')
 
     const newCart = [...addToCart]
 
     let productInCart = newCart.find(
-      (localVar) => item.id === localVar.id
+      (localVar) => product.id === localVar.id
     )
 
     if (productInCart && productInCart.quantinty > 1) {
       productInCart.quantinty--
     }
     else {
-      newCart.splice(productInCart, 1)
+      // newCart.splice(productInCart, 1)
+      alert('Negalima:)')
     }
 
     setAddToCart(newCart)

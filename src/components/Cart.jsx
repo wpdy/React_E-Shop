@@ -5,7 +5,6 @@ import Table from 'react-bootstrap/Table';
 const Cart = ({addToCart, removeProduct, increaseQuantity, decreaseQuantity, clearCart}) => {
 
   // console.log(addToCart)
-
   const TotalPrice = () => {
     return addToCart.reduce((sum, {price, quantinty}) => 
     sum + price*quantinty, 0).toFixed(2)
@@ -40,13 +39,13 @@ const Cart = ({addToCart, removeProduct, increaseQuantity, decreaseQuantity, cle
           ))
         }
         
-        {
-          <tr>
-            <td colSpan={3}>Bendra suma: { TotalPrice() }</td>
-            <td><button onClick={() => clearCart()}>Pay</button></td>
-            <td><button>Reset</button></td>
-          </tr>
-        }
+        
+        <tr>
+          <td colSpan={3}>Bendra suma: { TotalPrice() }</td>
+          <td><button onClick={() => clearCart()}>Pay</button></td>
+          <td><button>Reset</button></td>
+        </tr>
+        
         
       </tbody>
     </Table>
